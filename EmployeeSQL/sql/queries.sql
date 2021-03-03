@@ -62,9 +62,17 @@ from employees
 where emp_no = 499942;
 
 -- Bonus - Average Salary By Title
-select t.title, avg(salary) as AverageSalary
+create function ufc_avgsalarybytitle () 
+returns table (JobTitle varchar, AvgSalary numeric)
+language plpgsql
+as $$
+begin
+return query
+select t.title as JobTitle, avg(salary) as AvgSalary
 from employees e
 join titles t on e.emp_title_id = t.title_id
 join salaries s on e.emp_no = s.emp_no
+group by t.title;
+end;$$ 
 
 
