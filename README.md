@@ -40,6 +40,12 @@ The repo contains a Jupyter Notebook that uses SQLAlchemy to access data in the 
 
 The queries.sql file contains a script to create a function called from the Jupyter Notebook. The function returns Average Salary for each Job Title.
 
+Created Date and Created By fields are included in the table schemas for reference to ensure that data is loaded correctly. 
+
+<span style="color:red">**When importing data into the tables created with the schema.sql script, remove the columns Created Date and Created By from the columns dialog.**</span>
+
+![image](https://user-images.githubusercontent.com/69314608/109756114-e74b5f80-7bac-11eb-9a5a-636eafeb13bf.png)
+
 ## Status
 _finished_
 
