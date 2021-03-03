@@ -53,11 +53,18 @@ where dept_name in ('Sales','Development');
 -- In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 select distinct last_name, count(*) as frequency_count
 from employees
-group by last_name;
+group by last_name
+order by frequency_count desc;
 
 -- Epilogue
 select last_name, first_name
 from employees
 where emp_no = 499942;
+
+-- Bonus - Average Salary By Title
+select t.title, avg(salary) as AverageSalary
+from employees e
+join titles t on e.emp_title_id = t.title_id
+join salaries s on e.emp_no = s.emp_no
 
 
